@@ -1,10 +1,10 @@
  ```
- gcloud beta compute ssh --zone "us-central1-a" "instance-xxx" --project "machinelearning-xxx"
- screen
- sudo su gus_gmail_com
- ipython notebook.ipynb
- screen -r
- CTRL+C
- exit
+$ gcloud beta compute ssh --zone "us-central1-a" "instance-xxx" --project "machinelearning-xxx"
+$ screen
+$ sudo su gus_gmail_com
+$ ipython notebook.ipynb
+$ screen -r
+$ CTRL+C
+$ exit
 ``` 
  
