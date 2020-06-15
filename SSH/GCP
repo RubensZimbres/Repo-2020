@@ -1,5 +1,6 @@
  ```
 $ gcloud beta compute ssh --zone "us-central1-a" "instance-xxx" --project "machinelearning-xxx"
+$ script /dev/null
 $ screen
 $ sudo su gus_gmail_com
 $ ipython notebook.ipynb
