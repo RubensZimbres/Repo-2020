@@ -1,7 +1,3 @@
-{
-MaruboZeroLAG MACD
-}
-
 
 parâmetro
   PeriodoRapido(12);
