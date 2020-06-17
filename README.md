@@ -1,2 +1,8 @@
 # Repo-2020
-Current efforts in Machne Learning and Google Cloud
+Current efforts in Machne Learning and Google Cloud  
+  
+<b>Pascal code for MACD: </b>  
+
+<img src=https://github.com/RubensZimbres/Repo-2020/blob/master/Pascal/pascal.png>
+
+
