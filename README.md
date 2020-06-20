@@ -1,5 +1,5 @@
 # Repo-2020
-Current efforts in Machne Learning and Google Cloud  
+Current efforts in Machine Learning and Google Cloud  
   
 <b>Pascal code for Trading Stocks: </b>  
 
