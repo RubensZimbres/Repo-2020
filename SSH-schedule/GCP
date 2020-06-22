@@ -7,5 +7,7 @@ $ ipython notebook.ipynb
 $ screen -r
 $ CTRL+C
 $ exit
+
+$ screen -X -S "sessionname" quit
 ``` 
  
