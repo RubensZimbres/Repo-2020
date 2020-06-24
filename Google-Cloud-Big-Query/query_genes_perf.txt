@@ -15,9 +15,8 @@ ON t1.names=t2.names2 AND t1.start_position=t2.start AND t1.end_position=t2.end0
 FULL JOIN
 
 (SELECT * FROM (SELECT CLNDNINCL, ALLELEID,GENEINFO, start_position AS start3,	names AS names7, end_position AS end3, end_position-start_position AS length2 , reference_bases AS ref3 
-FROM `bigquery-public-data.human_variant_annotation.ncbi_clinvar_hg19_20180701`, UNNEST(CLNDNINCL) AS CLNDNINCL #CROSS JOIN UNNEST(alternate_bases) AS alternate_bases 
+FROM `bigquery-public-data.human_variant_annotation.ncbi_clinvar_hg19_20180701`, UNNEST(CLNDNINCL) AS CLNDNINCL 
+
 CROSS JOIN UNNEST(names) AS names)  ) AS t5
 
-ON t4.length=t5.length2 ) WHERE length IS NOT NULL LIMIT 1000
-
-##WHERE t5.CLNDNINCL2 IS NOT NULL  ORDER BY t5.CLNDNINCL DESC
+ON t4.length=t5.length2 ) WHERE LENGTH(CLNDNINCL)>3 AND length IS NOT NULL
