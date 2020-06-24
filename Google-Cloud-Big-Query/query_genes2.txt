@@ -1,6 +1,6 @@
 CREATE OR REPLACE TABLE  `machinelearning-xxx.genes.tabela_genes` AS SELECT * FROM 
 
-(SELECT start_position, end_position, reference_bases, end_position-start_position AS length, names FROM
+((SELECT start_position, end_position, reference_bases, end_position-start_position AS length, names FROM
 
 (SELECT * FROM (SELECT start_position, end_position,	reference_bases, 'alternate_bases.alt' AS alternate_base, 
 names FROM `bigquery-public-data.human_variant_annotation.ensembl_esp6500_aa_hg38_release93` 
@@ -14,10 +14,10 @@ ON t1.names=t2.names2 AND t1.start_position=t2.start AND t1.end_position=t2.end0
 
 LEFT JOIN
 
-(SELECT CLNDNINCL,ALLELEID,GENEINFO, start_position AS start3,	end_position AS end3, end_position-start_position AS length2 , reference_bases AS ref3 
-FROM `bigquery-public-data.human_variant_annotation.ncbi_clinvar_hg19_20180701` #CROSS JOIN UNNEST(alternate_bases) AS alternate_bases 
-CROSS JOIN UNNEST(CLNDNINCL) AS CLNDNINCL) AS t5
+(SELECT * FROM (SELECT ALLELEID,GENEINFO, start_position AS start3,	names AS names7, end_position AS end3, end_position-start_position AS length2 , reference_bases AS ref3 
+FROM `bigquery-public-data.human_variant_annotation.ncbi_clinvar_hg19_20180701`, UNNEST(CLNDNINCL) AS CLNDNINCL #CROSS JOIN UNNEST(alternate_bases) AS alternate_bases 
+CROSS JOIN UNNEST(names) AS names)  ) AS t5
 
-ON t4.reference_bases=t5.ref3 AND t4.length=t5.length2 AND t4.start_position=t5.start3
+ON t4.names=t5.names7 )
 
-WHERE t5.CLNDNINCL IS NOT NULL ORDER BY t5.CLNDNINCL DESC
+##WHERE t5.CLNDNINCL2 IS NOT NULL  ORDER BY t5.CLNDNINCL DESC
