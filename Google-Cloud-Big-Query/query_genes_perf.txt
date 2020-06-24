@@ -14,10 +14,10 @@ ON t1.names=t2.names2 AND t1.start_position=t2.start AND t1.end_position=t2.end0
 
 LEFT JOIN
 
-(SELECT * FROM (SELECT CLNDNINCL,ALLELEID,GENEINFO, start_position AS start3,	names AS names7, end_position AS end3, end_position-start_position AS length2 , reference_bases AS ref3 
+(SELECT * FROM (SELECT CLNDNINCL, ALLELEID,GENEINFO, start_position AS start3,	names AS names7, end_position AS end3, end_position-start_position AS length2 , reference_bases AS ref3 
 FROM `bigquery-public-data.human_variant_annotation.ncbi_clinvar_hg19_20180701`, UNNEST(CLNDNINCL) AS CLNDNINCL #CROSS JOIN UNNEST(alternate_bases) AS alternate_bases 
 CROSS JOIN UNNEST(names) AS names)  ) AS t5
 
-ON t4.names=t5.names7 )
+ON t4.start_position=t5.start3 ) WHERE CLNDNINCL IS NOT NULL
 
 ##WHERE t5.CLNDNINCL2 IS NOT NULL  ORDER BY t5.CLNDNINCL DESC
