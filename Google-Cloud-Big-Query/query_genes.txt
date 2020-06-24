@@ -1,7 +1,6 @@
 %%bigquery
 
-
-CREATE OR REPLACE TABLE  `machinelearning-240820.genes.tabela_genes` AS SELECT * FROM 
+CREATE OR REPLACE TABLE  `machinelearning-xxx.genes.tabela_genes` AS SELECT * FROM 
 
 (SELECT start_position, end_position, reference_bases, names FROM
 
@@ -13,4 +12,4 @@ LEFT JOIN
 
 (SELECT start_position AS start, end_position AS end0,	reference_bases AS ref, 'alternate_bases.alt' AS alternate_base2, names AS names2 FROM `bigquery-public-data.human_variant_annotation.ncbi_dbsnp_hg38_20180418` CROSS JOIN UNNEST(names) AS names) AS t2
 
-ON t1.names=t2.names2 AND t1.start_position=t2.start AND t1.end_position=t2.end0 AND t1.reference_bases=t2.ref AND t1.alternate_base=t2.alternate_base2) ORDER BY reference_bases DESC)
+ON t1.names=t2.names2 AND t1.start_position=t2.start AND t1.end_position=t2.end0 AND t1.reference_bases=t2.ref AND t1.alternate_base=t2.alternate_base2) ORDER BY end_position-start_position DESC)
