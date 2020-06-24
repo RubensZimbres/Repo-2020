@@ -1,3 +1,3 @@
 # Google Cloud Platform - Big Query - Gene Database
 
-<img src=https://github.com/RubensZimbres/Repo-2020/blob/master/Google-Cloud-Big-Query/bq.png>
+<img src=https://github.com/RubensZimbres/Repo-2020/blob/master/Google-Cloud-Big-Query/bq2.png>
