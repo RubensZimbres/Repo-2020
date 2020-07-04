@@ -6,6 +6,7 @@
 
 ```
 sudo apt-get install kubectl
+cd project
 gcloud beta auth configure-docker us-central1-docker.pkg.dev
 cat key_123_bla_bla.json | docker login -u _json_key --password-stdin https://us-central1-docker.pkg.dev
 gcloud builds submit --tag gcr.io/<project-id>/helloworld-gke . --timeout=85000
