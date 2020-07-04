@@ -12,7 +12,7 @@ RUN sudo chown root:root *
 RUN sudo chmod -R 777 ./home
 
 RUN sudo apt-get update && sudo apt-get install -y apt-utils build-essential cmake && sudo apt-get install -y libgtk-3-dev && sudo apt-get install -y libboost-all-dev && sudo apt-get install -y default-libmysqlclient-dev
-# Install production depython-csvpendencies.
+
 RUN pip install setuptools mysqlclient cmake python-Levenshtein Flask gunicorn pybase64 protobuf nltk fuzzywuzzy PyPDF2 numpy python-csv pandas SQLAlchemy PyMySQL pytz Unidecode torch tensorflow==2.0 transformers imutils scikit-learn scikit-image scipy==1.4.1 opencv-python text2num sklearn 
 RUN pip install --upgrade google-cloud-vision
 RUN pip install --upgrade google-cloud-language
@@ -24,10 +24,7 @@ RUN pip install google-cloud-storage
 RUN sudo apt-get install python3-mysqldb
 RUN pip install dlib
 RUN python -c "import nltk;nltk.download('punkt');nltk.download('stopwords')"
-# Run the web service on container startup. Here we use the gunicornpytiz 
-# webserver, with one worker process and 8 threads.
-# For environments with multiple CPU cores, increase the number of workers
-# to be equal to the cores available.
+
 COPY app.py ./home/app.py
 COPY sentimentos_marco_en.txt ./home/sentimentos_marco_en.txt
 COPY sentimentos_marco_es.txt ./home/sentimentos_marco_es.txt
