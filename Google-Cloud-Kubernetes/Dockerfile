@@ -13,7 +13,7 @@ RUN sudo chmod -R 777 ./home
 
 RUN sudo apt-get update && sudo apt-get install -y apt-utils build-essential cmake && sudo apt-get install -y libgtk-3-dev && sudo apt-get install -y libboost-all-dev && sudo apt-get install -y default-libmysqlclient-dev
 
-RUN pip install setuptools mysqlclient cmake python-Levenshtein Flask gunicorn pybase64 protobuf nltk fuzzywuzzy PyPDF2 numpy python-csv pandas SQLAlchemy PyMySQL pytz Unidecode torch tensorflow==2.0 transformers imutils scikit-learn scikit-image scipy==1.4.1 opencv-python text2num sklearn 
+RUN pip install setuptools mysqlclient cmake python-Levenshtein Flask gunicorn pybase64 protobuf nltk fuzzywuzzy PyPDF2 numpy python-csv pandas SQLAlchemy PyMySQL pytz Unidecode torch tensorflow==2.0 transformers imutils scikit-learn scikit-image scipy==1.4.1 opencv-python text2num sklearn matplotlib
 RUN pip install --upgrade google-cloud-vision
 RUN pip install --upgrade google-cloud-language
 RUN pip install --upgrade google-cloud
