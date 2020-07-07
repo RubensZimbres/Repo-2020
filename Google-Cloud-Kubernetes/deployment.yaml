@@ -16,7 +16,7 @@ spec:
       containers:
       - name: marco-app
         # Replace $GCLOUD_PROJECT with your project ID
-        image: gcr.io/machinelearning-240820/marco-gke:latest
+        image: gcr.io/machinelearning-xxx/example-gke:latest
         env:
           - name: "cvs-marco-marketing"
             value: marco
