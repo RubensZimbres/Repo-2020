@@ -1,0 +1,36 @@
+# This file configures the hello-world app which serves public web traffic.
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: marco-gke
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: marco
+  template:
+    metadata:
+      labels:
+        app: marco
+    spec:
+      containers:
+      - name: marco-app
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: gcr.io/machinelearning-240820/marco-gke:latest
+        env:
+          - name: "cvs-marco-marketing"
+            value: marco
+          - name: "GOOGLE_APPLICATION_CREDENTIALS"
+            value: "/var/run/secret/cloud.google.com/service-account.json"
+        volumeMounts:
+          - name: "service-account"
+            mountPath: "/var/run/secret/cloud.google.com"
+          - name: "certs"
+            mountPath: "/etc/ssl/certs"
+      volumes:
+        - name: "service-account"
+          secret:
+            secretName: "my-app-sa-key"
+        - name: "certs"
+          hostPath:
+            path: "/etc/ssl/certs"
