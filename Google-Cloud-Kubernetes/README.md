@@ -7,6 +7,7 @@
 ```
 $ sudo apt-get install kubectl
 $ cd project
+$ gcloud init
 $ gcloud beta auth configure-docker us-central1-docker.pkg.dev
 $ cat service-account.json | docker login -u _json_key --password-stdin https://us-central1-docker.pkg.dev
 
