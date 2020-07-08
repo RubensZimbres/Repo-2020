@@ -23,4 +23,6 @@ $ kubectl apply -f deployment.yaml
 
 $ kubectl get pods
 $ kubectl logs <pod-name>
+
+$ kubectl apply -f service.yaml
 ```
