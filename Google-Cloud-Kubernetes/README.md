@@ -6,10 +6,17 @@
 
 ```
 $ sudo apt-get install kubectl
+$ wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-293.0.0-linux-x86_64.tar.gz
+$ ./google-cloud-sdk/install.sh
+
 $ cd project
 $ gcloud config set disable_prompts false
 $ gcloud init
 $ gcloud beta auth configure-docker us-central1-docker.pkg.dev
+$ sudo usermod -aG docker $USER
+$ newgrp docker
+
+$ sudo apt install docker.io
 $ cat service-account.json | docker login -u _json_key --password-stdin https://us-central1-docker.pkg.dev
 
 $ gcloud builds submit --tag gcr.io/<project-id>/example-gke . --timeout=85000
