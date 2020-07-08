@@ -23,6 +23,9 @@ $ gcloud builds submit --tag gcr.io/<project-id>/example-gke . --timeout=85000
 
 $ gcloud auth login
 $ gcloud auth configure-docker
+$ wget https://github.com/GoogleCloudPlatform/docker-credential-gcr/releases/download/v2.0.1/docker-credential-gcr_linux_amd64-2.0.1.tar.gz
+$ tar -xvf docker-credential-gcr_linux_amd64-2.0.1.tar.gz
+$ docker-credential-gcr configure-docker
 
 $ gcloud container clusters create example-gke --num-nodes 1 --enable-basic-auth --issue-client-certificate --enable-autoscaling --min-nodes 1 --max-nodes 3 --region us-central1 --machine-type n1-standard-2 --local-ssd-count 1 --scopes=cloud-platform,storage-full,compute-rw,service-control,cloud-source-repos --async --preemptible --enable-autorepair
 
