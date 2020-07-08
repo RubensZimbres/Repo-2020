@@ -30,6 +30,7 @@ $ kubectl apply -f deployment.yaml
 
 $ kubectl get pods
 $ kubectl logs <pod-name>
+$ kubectl describe pod example-gke-12345
 
 $ kubectl apply -f service.yaml
 ```
