@@ -39,5 +39,7 @@ $ kubectl get pods
 $ kubectl logs <pod-name>
 $ kubectl describe pod example-gke-12345
 
+$ allow-all-network-policy.yaml
+
 $ kubectl apply -f service.yaml
 ```
