@@ -28,6 +28,8 @@ $ gcloud builds submit --tag gcr.io/<project-id>/example-gke . --timeout=85000
 
 $ gcloud container clusters create example-gke --num-nodes 1 --enable-basic-auth --issue-client-certificate --enable-autoscaling --min-nodes 1 --max-nodes 3 --region us-central1 --machine-type n1-standard-2 --local-ssd-count 1 --scopes=cloud-platform,storage-full,compute-rw,service-control,cloud-source-repos --async --preemptible --enable-autorepair
 
+$ gcloud container clusters get-crdentials
+
 $ kubectl create secret generic my-app-sa-key --from-file service-account.json
 $ kubectl get secret
 
