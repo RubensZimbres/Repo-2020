@@ -13,12 +13,13 @@ $ cd project
 $ gcloud config set disable_prompts false
 
 $ gcloud auth login
+$ gcloud config set project marcomarketing
 $ gcloud auth configure-docker
 $ gcloud init
 $ gcloud beta auth configure-docker us-central1-docker.pkg.dev
 
 $ sudo usermod -aG docker $USER
-$ newgrp docker
+#$ newgrp docker
 
 $ sudo apt install docker.io
 $ cat service-account.json | docker login -u _json_key --password-stdin https://us-central1-docker.pkg.dev
