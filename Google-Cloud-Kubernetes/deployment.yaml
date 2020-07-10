@@ -2,19 +2,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: marco-gke
+  name: example-gke
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: marco
+      app: example
   template:
     metadata:
       labels:
-        app: marco
+        app: example
     spec:
       containers:
-      - name: marco-app
+      - name: example-app
         # Replace $GCLOUD_PROJECT with your project ID
         image: gcr.io/machinelearning-xxx/example-gke:latest
         env:
