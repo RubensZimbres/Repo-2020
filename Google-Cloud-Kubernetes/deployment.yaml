@@ -21,7 +21,7 @@ spec:
           - name: "cvs-marco-marketing"
             value: marco
           - name: "GOOGLE_APPLICATION_CREDENTIALS"
-            value: "/var/run/secret/cloud.google.com/service-account.json"
+            value: "/var/run/secret/cloud.google.com/file-name.json"
         volumeMounts:
           - name: "service-account"
             mountPath: "/var/run/secret/cloud.google.com"
