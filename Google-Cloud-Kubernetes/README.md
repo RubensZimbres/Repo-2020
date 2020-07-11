@@ -26,7 +26,7 @@ $ cat service-account.json | docker login -u _json_key --password-stdin https://
 
 $ gcloud builds submit --tag gcr.io/<project-id>/example-gke . --timeout=85000
 
-$ gcloud container clusters create example-gke --num-nodes 1 --enable-basic-auth --issue-client-certificate --enable-autoscaling --min-nodes 1 --max-nodes 3 --region us-central1 --machine-type n1-standard-2 --local-ssd-count 1 --scopes=cloud-platform,storage-full,compute-rw,service-control,cloud-source-repos --async --preemptible --enable-autorepair
+$ gcloud container clusters create example-gke --num-nodes 1 --enable-basic-auth --issue-client-certificate --enable-autoscaling --min-nodes 1 --max-nodes 3 --region us-central1 --machine-type n1-standard-2 --local-ssd-count 1 --scopes=cloud-platform,storage-full,compute-rw,service-control,cloud-source-repos --service-account service-account-name@project-id.iam.gserviceaccount.com --async --preemptible --enable-autorepair
 
 $ gcloud container clusters get-credentials example-gke --region=us-central1
 
