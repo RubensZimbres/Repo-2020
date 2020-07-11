@@ -13,7 +13,7 @@ $ cd project
 $ gcloud config set disable_prompts false
 
 $ gcloud auth login
-$ gcloud config set project marcomarketing
+$ gcloud config set project <project-id>
 $ gcloud auth configure-docker
 $ gcloud init
 $ gcloud beta auth configure-docker us-central1-docker.pkg.dev
