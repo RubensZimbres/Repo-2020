@@ -4,6 +4,7 @@ $ dpkg -l cron
 $ systemctl status cron
 $ nano /etc/crontab
 (ADD)
+(minute hour day-of-month month day-of-week command)
 * * * * * /home/user/anaconda3/python /home/script.py
 CRTL+X | Y
 $ crontab -e
