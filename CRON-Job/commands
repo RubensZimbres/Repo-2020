@@ -3,6 +3,7 @@ $ apt-get update && apt-get upgrade
 $ dpkg -l cron 
 $ systemctl status cron
 $ nano /etc/crontab
+(ADD)
 * * * * * /home/user/anaconda3/python /home/script.py
 CRTL+X | Y
 $ crontab -e
