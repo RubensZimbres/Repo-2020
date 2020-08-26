@@ -1,0 +1,12 @@
+https://www.virtualbox.org/wiki/Linux_Downloads  
+
+```
+$ VBoxManage list webcams
+- alias
+- host path
+
+$ VBoxManage controlvm Windows10  webcam attach /dev/video0
+```  
+  
+https://www.techrepublic.com/article/how-to-enable-usb-in-virtualbox/  
+  
