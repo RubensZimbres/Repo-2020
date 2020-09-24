@@ -2,6 +2,8 @@ ffmpeg -i ./audio_in.wav -ac 2 -ab 128k -filter:a volume=0.95 -filter:a equalize
 
 ffmpeg -i audio_norm.wav -af silenceremove=1:0:-50dB output.mp3
 
+Sep20** "(echo Y) | ffmpeg -i '{0}_cut{3}.wav' -ac 1 -ab 128k -filter:a volume=0.8 -filter:a equalizer=f=8000:t=h:w=330:g=-12 -filter:a dynaudnorm -af silenceremove=1:0:-50dB out.wav"
+        
 %reset
 
 # -*- coding: utf-8 -*-
