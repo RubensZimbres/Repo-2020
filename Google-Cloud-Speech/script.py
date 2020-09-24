@@ -39,18 +39,18 @@ client = speech.SpeechClient()
 config = speech.types.RecognitionConfig(
     encoding=enums.RecognitionConfig.AudioEncoding.MP3,
     sample_rate_hertz=8000,enable_word_time_offsets= True,
-    model='default',
+    model='command_and_search',
     language_code='pt-BR',
     enable_automatic_punctuation= True,
     use_enhanced=False,
-    speech_contexts=[speech.types.SpeechContext(phrases=['TecBan', 'banco','protocolo','saque','depósito','dinheiro','caixa','valor'])],
+    speech_contexts=[speech.types.SpeechContext(phrases=['protocolo','saque','depósito','dinheiro','caixa','valor'])],
     enable_speaker_diarization=True,
-    diarization_speaker_count=3,
+    diarization_speaker_count=2,
     audio_channel_count=1,
     profanity_filter=True,
     enable_separate_recognition_per_channel=False)
 
-audio=speech.types.RecognitionAudio(uri="gs://platform666/output.mp3")
+audio=speech.types.RecognitionAudio(uri="gs://platformxxx/output.mp3")
 
 operation = client.long_running_recognize(config, audio)
 
