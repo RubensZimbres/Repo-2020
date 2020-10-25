@@ -28,7 +28,7 @@ begin
   
   // BBAS3F
 
-  se (isBought = false) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) e (MACD(35,14,9)|1|>0) então
+  se (isBought = false) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) e (MACD(35,14,9)|1|>0.05) então
     
     inicio
       ClosePosition;  
