@@ -50,3 +50,43 @@ except Exception as e:
     print('error')
     email(e)
 
+##############################################################################################################
+
+def email2(erro):
+
+    import smtplib
+    
+    gmail_user = 'erropython@gmail.com'
+    gmail_password = 'senha_gmail_XXX'
+    
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+    except:
+        print('Something went wrong...')
+    
+    
+    sent_from = gmail_user
+    to = ['rubenszmm@gmail.com']
+    subject = 'Report automatizado de erros Python em Andy'
+    
+    email_text =  'Subject: {}\n\nException: \n\n{}\n\n hehehe'.format(subject, erro)
+    
+    try:
+        server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+        server.ehlo()
+        server.login(gmail_user, gmail_password)
+        server.sendmail(sent_from, to, email_text)
+        server.close()
+    
+        print('Email sent!')
+    except:
+        print('Something went wrong...')
+
+    
+try:
+    pd.Series(a[2])
+except Exception as e:
+    print('error')
+    email2(e)
