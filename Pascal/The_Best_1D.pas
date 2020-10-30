@@ -1,3 +1,5 @@
+x=Espera
+
 parâmetro
   PeriodoRapido(12);
   PeriodoLento(35);
@@ -28,7 +30,7 @@ begin
   
   // BBAS3F
 
-  se (isBought = false) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) e (MACD(26,12,9)|1|>0.05) então
+  se (isBought = false) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) e (MACD(26,12,9)|1|>-400x) então
     
     inicio
       ClosePosition;  
@@ -37,7 +39,7 @@ begin
 
     Fim
    
-  senão se (MACD(26,12,9)|1|<0) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) < 0) então
+  senão se (MACD(26,12,9)|1|<100x) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) < 0) então
     inicio
       
       se (isBought = true) então
