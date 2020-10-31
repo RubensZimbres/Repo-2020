@@ -28,7 +28,7 @@ begin
   
   // BBAS3F
 
-  se (isBought = false) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) e (MACD(35,14,9)|1|>0.05) então
+  se (isBought = false) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) e (MACD(35,14,9)|1|>-0.04) então
     
     inicio
       ClosePosition;  
@@ -37,7 +37,7 @@ begin
 
     Fim
    
-  senão se (MACD(35,14,9)|1|<0) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) < 0) então
+  senão se (MACD(35,14,9)|1|<0.04) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) < 0) então
     inicio
       
       se (isBought = true) então
@@ -47,19 +47,3 @@ begin
     fim;
      
 end;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
