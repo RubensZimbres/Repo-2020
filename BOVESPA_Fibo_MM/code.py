@@ -54,25 +54,31 @@ def predict(acao):
         
         fibo_inferior=dataset[-1]-primeiro_fibo
         
-        if tendencia>0 and fibo_superior>0 and fibo_superior<0.04*dataset[-1]:
+        if tendencia>0 and fibo_superior>0 and fibo_superior<1:
             output='buy'
             print('buy')
-        elif tendencia<0 and fibo_inferior<0 and fibo_inferior<-0.04*dataset[-1]:
+        elif tendencia<0 and fibo_inferior<0 and fibo_inferior<-1:
             output='short'
             print('short')
         else:
             output='wait'
             print('wait')
+        close=dataset[-1]
     except Exception as e:
         print(e)
         output='NA'
-    return output
+        close='NA'
+    return output, close
 
 df=pd.read_csv('Lista_Acoes.csv',sep=';',header=0)
-df.columns=['Sigla','Previsao']
+df.columns=['Sigla','Nome_Empresa']
+df['Previsao']=np.zeros(df.shape[0])
+df['Close']=np.zeros(df.shape[0])
 
-for i in range(0,df.shape[0]):
-    df['Previsao'].iloc[i]=predict(df.iloc[i,0])
+
+for i in range(0,30):#df.shape[0]):
+    df['Previsao'].iloc[i]=predict(df.iloc[i,0])[0]
+    df['Close'].iloc[i]=predict(df.iloc[i,0])[1]
 
 
 df.to_csv('recomendacoes_{}.csv'.format(hoje),sep=',',columns=df.columns,index=False)
