@@ -64,21 +64,29 @@ def predict(acao):
             output='wait'
             print('wait')
         close=dataset[-1]
+        ganho=(max_periodo/segundo_fibo)-1
+        diferenca=media_verde-media_vermelha
     except Exception as e:
         print(e)
         output='NA'
         close='NA'
-    return output, close
+        ganho='NA'
+        diferenca='NA'
+    return output, close,ganho,diferenca
 
 df=pd.read_csv('Lista_Acoes.csv',sep=';',header=0)
 df.columns=['Sigla','Nome_Empresa']
 df['Previsao']=np.zeros(df.shape[0])
 df['Close']=np.zeros(df.shape[0])
+df['Potencial']=np.zeros(df.shape[0])
+df['MM_diff']=np.zeros(df.shape[0])
 
 
 for i in range(0,df.shape[0]):
     df['Previsao'].iloc[i]=predict(df.iloc[i,0])[0]
     df['Close'].iloc[i]=predict(df.iloc[i,0])[1]
+    df['Potencial'].iloc[i]=predict(df.iloc[i,0])[2]
+    df['MM_diff'].iloc[i]=predict(df.iloc[i,0])[2]
 
-
+df
 df.to_csv('recomendacoes_{}.csv'.format(hoje),sep=',',columns=df.columns,index=False)
