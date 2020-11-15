@@ -76,7 +76,7 @@ df['Previsao']=np.zeros(df.shape[0])
 df['Close']=np.zeros(df.shape[0])
 
 
-for i in range(0,30):#df.shape[0]):
+for i in range(0,df.shape[0]):
     df['Previsao'].iloc[i]=predict(df.iloc[i,0])[0]
     df['Close'].iloc[i]=predict(df.iloc[i,0])[1]
 
