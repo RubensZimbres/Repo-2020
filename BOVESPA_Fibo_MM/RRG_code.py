@@ -14,7 +14,7 @@ from datetime import timedelta
 
 hoje = datetime.datetime.today()
 #hoje=now.strftime("%Y,%m,%d")
-inicio=(datetime.datetime.today() - timedelta(days=200))#.strftime("%Y,%m,%d")
+#inicio=(datetime.datetime.today() - timedelta(days=200))#.strftime("%Y,%m,%d")
       
 def predict(acao):
 
@@ -23,7 +23,7 @@ def predict(acao):
         source = 'yahoo'
         
         # Set date range (Google went public August 19, 2004)
-        start =inicio
+        start =datetime.datetime(2020, 3, 1)
         end = hoje
         
         # Collect Google stock data
@@ -43,7 +43,7 @@ def predict(acao):
         segundo_fibo=min_periodo+0.618*diff
         
         
-        media_verde=np.mean(dataset[-8:])
+        media_verde=np.mean(dataset[-7:])
         media_vermelha=np.mean(dataset[-12:])
         
         tendencia=media_verde-media_vermelha
@@ -54,10 +54,10 @@ def predict(acao):
         
         fibo_inferior=dataset[-1]-primeiro_fibo
         
-        if tendencia>0 and fibo_superior>0 and fibo_superior<1:
+        if tendencia>0 and fibo_superior>0 and fibo_superior<0.04*dataset[-1]:
             output='buy'
             print('buy')
-        elif tendencia<0 and fibo_inferior<0 and fibo_inferior<-1:
+        elif tendencia<0 and fibo_inferior<0 and fibo_inferior<-0.04*dataset[-1]:
             output='short'
             print('short')
         else:
@@ -88,5 +88,5 @@ for i in range(0,df.shape[0]):
     df['Potencial'].iloc[i]=predict(df.iloc[i,0])[2]
     df['MM_diff'].iloc[i]=predict(df.iloc[i,0])[2]
 
-df
+df[df.Previsao=='buy']
 df.to_csv('recomendacoes_{}.csv'.format(hoje),sep=',',columns=df.columns,index=False)
