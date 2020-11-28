@@ -1,3 +1,5 @@
+/// 1 SEMANA
+
 parâmetro
   PeriodoRapido(12);
   PeriodoLento(35);
@@ -28,7 +30,7 @@ begin
   
   // BBAS3F
 
-  se (isBought = false) e (MACD(35,26,9)|0|>-0.8) e (MACD(35,26,9)|1|>0) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) então
+  se (isBought = false) e (MACD(11,9,9)|0|>-0.15) e (MACD(11,9,9)|1|>0) e ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) > 0) então
     
     inicio
       ClosePosition;  
@@ -37,7 +39,7 @@ begin
 
     Fim
    
-  senão se ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) < 0) e (MACD(35,26,9)|1|<0.08)então
+  senão se ((ZeroLAG_MACD-ZeroLAG_MACD_Sinal) < 0) e (MACD(35,26,9)|1|<0.21) então
     inicio
       
       se (isBought = true) então
@@ -47,11 +49,3 @@ begin
     fim;
      
 end;
-
-
-
-
-
-
-
-
