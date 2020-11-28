@@ -1,13 +1,14 @@
 Graph
 
 1S
-- MACD Linha 35,14
-- MACD Histograma 35,14,9
+- MM 7 e 6
+- MACD Linha 9
+- MACD Histograma 11,9,9
 
 1D
-- MACD Linha 26,12
-- MACD Histograma 26,12,9
+- MACD Linha 9
+- MACD Histograma 35,26,9
 
 5M
-- MACD Linha 35,14
-- MACD Histograma 35,14,9
+- MACD Linha 9
+- MACD Histograma 11,9,9
