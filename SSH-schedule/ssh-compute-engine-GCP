@@ -1,1 +1,7 @@
+chmod 700 ~/.ssh  
+
+ssh-keygen -t rsa -b 2048  
+
+openssl rsa -in /home/user/.ssh/id_rsa -out /home/user/.ssh/id_rsaX 
+  
 gcloud beta compute ssh --zone "us-central1-X" "instance-name" --project "machinelearning-XXX" --ssh-key-file /home/user/.ssh/id_rsaX
