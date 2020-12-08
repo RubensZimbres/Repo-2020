@@ -1,0 +1,1 @@
+gcloud beta compute ssh --zone "us-central1-X" "instance-name" --project "machinelearning-XXX" --ssh-key-file /home/user/.ssh/id_rsaX
