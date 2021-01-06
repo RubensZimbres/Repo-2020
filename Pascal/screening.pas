@@ -1,3 +1,12 @@
 begin
-    if (MACD(21,15,9)|1|>0) and (MACD(21,15,9)|1|<Close/2500) then Select;
-end:
+
+  if (Media(13,Close)<Media(3,Close)) and (MACD(35,26,9)>MACD(35,26,9)[1])  Then 
+  begin 
+    PaintBar(clLime);// ALTA
+  end
+  else if (Media(13,Close)>Media(3,Close)) and (MACD(35,26,9)<MACD(35,26,9)[1])  Then 
+  begin
+    PaintBar(clRed);// ALTA
+  end
+  
+  end;
