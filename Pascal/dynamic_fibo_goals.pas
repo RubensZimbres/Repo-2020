@@ -12,8 +12,8 @@ begin
   diff:=maior-menor;
   lower:= (menor+0.382*diff);
   higher:= (menor+0.618*diff);
-  alvo:=maior*1.11;
-  alvo2:=maior*1.328;
+  alvo:=maior*1.382;
+  alvo2:=maior*1.618;
   
   SetPlotColor(1,clNavy);
   SetPlotColor(2,clNavy);
