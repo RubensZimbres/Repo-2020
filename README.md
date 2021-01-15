@@ -1,6 +1,10 @@
 # Repo-2020
 Current efforts in Machine Learning and Google Cloud  
   
+<b>Natural Langage Processing, NLTK, networkx and Graph Neural Networks </b>  
+  
+<img scr=https://github.com/RubensZimbres/Repo-2020/blob/master/Natural_Language_Processing/dog.png>  
+  
 <b>Pascal code for Trading Stocks: </b>  
 
 <img src=https://github.com/RubensZimbres/Repo-2020/blob/master/Pascal/pascal.png>  
