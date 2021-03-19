@@ -10,4 +10,8 @@ $ exit
 
 $ screen -X -S "sessionname" quit
 ``` 
+
+```
+screen -r -d 3301
+```
  
