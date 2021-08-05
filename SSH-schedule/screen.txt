@@ -5,6 +5,9 @@ $ script /dev/null
 $ screen
 $ python notebook.py
 
+screen -dmS abc
+screen -r abc
+
 $ screen -r
 $ CTRL+C
 $ exit
